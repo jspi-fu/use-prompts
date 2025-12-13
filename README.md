@@ -34,18 +34,39 @@
 
 ## AI编程
 
+- **[README.md](AI编程/README.md)** - AI编程思考：从demo到产品的挑战与思考
+
 ### 后端
 
+- **[Django.md](AI编程/后端/Django.md)** - Python + Django，可扩展的 Web 应用开发框架
 - **[Fastapi.md](AI编程/后端/Fastapi.md)** - Python 3.10+，FastAPI + Pydantic v2，异步优先 HTTP API
 - **[java-springboot.md](AI编程/后端/java-springboot.md)** - Java 17/21 + Spring Boot 3.x，标准 REST API
 
 ### 前端
 
-- **[angular.md](AI编程/前端/angular.md)** - Angular 18 + TS + Jest，使用 `for-next.function.ts`
-- **[HTML.md](AI编程/前端/HTML.md)** - HTML5 + Tailwind + 原生 JS 静态/轻交互场景
-- **[Nextjs.md](AI编程/前端/Nextjs.md)** - Next.js 14 App Router + TS，Shadcn/Radix/Tailwind、Viem/Wagmi
-- **[React-components-creation.md](AI编程/前端/React-components-creation.md)** - React/TS 组件生成与适配流程（含 Tailwind、shadcn/ui）
-- **[Vue3-Nuxt.md](AI编程/前端/Vue3-Nuxt.md)** - Vue 3 + Nuxt 3 + TS + Tailwind，Composition API
+#### 框架
+
+- **[angular.md](AI编程/前端/框架/angular.md)** - Angular 18 + TS + Jest，使用 `for-next.function.ts`
+- **[HTML+CSS.md](AI编程/前端/框架/HTML+CSS.md)** - HTML 和 CSS 最佳实践，语义化、可访问性和响应式设计
+- **[React.md](AI编程/前端/框架/React.md)** - TypeScript + Gatsby + React + Tailwind，函数式声明式编程
+- **[React-components-creation.md](AI编程/前端/框架/React-components-creation.md)** - React/TS 组件生成与适配流程（含 Tailwind、shadcn/ui）
+- **[Vue3-Nuxt.md](AI编程/前端/框架/Vue3-Nuxt.md)** - Vue 3 + Nuxt 3 + TS + Tailwind，Composition API
+
+#### UI美化
+
+- **[UI美化.md](AI编程/前端/UI美化/UI美化.md)** - UI 美化设计师，高标准产品视觉设计方法论（挖掘需求、方案分级、质检）
+- **[前端美化lazy.md](AI编程/前端/UI美化/前端美化lazy.md)** - 前端美化懒人版，快速修复前端界面，打造简约、高级、极简风格
+- **[UI转json.md](AI编程/前端/UI美化/UI转json.md)** - UI 转 JSON 设计解析，将UI截图转换为JSON格式，以便AI复刻截图效果
+
+### 全栈
+
+- **[HTML+JS+CSS.md](AI编程/全栈/HTML+JS+CSS.md)** - Shopify 主题开发专家，Liquid、HTML、CSS、JavaScript 和 Shopify Online Store 2.0
+- **[Nextjs.md](AI编程/全栈/Nextjs.md)** - Next.js 14 + Solidity + TypeScript + Viem/Wagmi，Web3 全栈开发
+- **[NuxtJS.md](AI编程/全栈/NuxtJS.md)** - Nuxt.js 全栈开发规范
+
+### 爬虫
+
+- **[python爬虫.md](AI编程/爬虫/python爬虫.md)** - Python 网络爬虫与数据提取，requests、BeautifulSoup、selenium、jina、firecrawl、agentQL、multion
 
 ### 部署
 
@@ -58,12 +79,6 @@
 - **[code-styles.md](AI编程/全局规范/code-styles.md)** - 代码风格分析提示，用于代码风格分析与一致性检查
 - **[global.md](AI编程/全局规范/global.md)** - 全局规范（通用），AI编程的全局规范（允许AI可控发挥，适用于编程能力强的AI）
 - **[RIPER5.md](AI编程/全局规范/RIPER5.md)** - RIPER5，AI编程的全局规范（工作流详细明确，适用于编程能力弱的AI）
-
-### 其他
-
-- **[UI美化.md](AI编程/UI美化.md)** - UI 美化设计师，高标准产品视觉设计方法论（挖掘需求、方案分级、质检）
-- **[前端美化lazy.md](AI编程/前端美化lazy.md)** - 前端美化懒人版，快速修复前端界面，打造简约、高级、极简风格
-- **[UI转json.md](AI编程/UI转json.md)** - UI 转 JSON 设计解析，将UI截图转换为JSON格式，以便AI复刻截图效果
 
 ---
 
