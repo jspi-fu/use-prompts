@@ -16,8 +16,8 @@
 ### 🤖 Kiro
 
 - **[System.md](官方提示词/Kiro/System.md)** - Kiro AI 助手系统提示词
-- **[vibe.md](官方提示词/Kiro/vibe.md)** - Kiro 工作风格与目标设定
-- **[spec.md](官方提示词/Kiro/spec.md)** - Kiro 技术规范
+- **[vibe.md](官方提示词/Kiro/vibe.md)** - Kiro Vibe 模式提示词
+- **[spec.md](官方提示词/Kiro/spec.md)** - Kiro Spec 模式提示词
 
 ## 📱 日常使用
 
