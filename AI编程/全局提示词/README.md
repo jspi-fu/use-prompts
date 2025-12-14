@@ -4,7 +4,7 @@
 
 ## 文件定位
 
-### `reliable-coding` - 适用于编程能力强的 AI/IDE
+### `reliable-coding` - 适用于编程能力强的 AI、优化良好的 AI IDE （如 cursor、kiro、codex、claude code、Gemini CLI等）
 
 **定位**：面向具备较强自主判断和执行能力的 AI 助手，提供简洁的代码质量原则和开发规范。
 
@@ -21,7 +21,7 @@
 - 需要快速迭代和灵活开发的工作流
 - 开发者对 AI 的输出有较强的判断和修正能力
 
-### `RIPER5` - 适用于编程能力弱的 AI/IDE
+### `RIPER5` - 适用于编程能力较弱的 AI、优化不佳的 AI IDE （如 Trae、Roocode、codebuddy等）
 
 **定位**：面向需要严格控制的 AI 助手，通过五阶段模式协议防止过度修改和破坏性变更。
 
