@@ -56,7 +56,7 @@
 
 ### 🔧 其他工具
 
-- **[回答多样化.md](日常使用/回答多样化.md)** - 为每个提问生成五个可能的回答，每个回答包含概率值，摘自论文[《VERBALIZED SAMPLING: HOW TO MITIGATE MODE
+- **[回答多样化.md](日常使用/回答多样化.md)** - 别让AI的回答变得千篇一律好吗，摘自论文[《VERBALIZED SAMPLING: HOW TO MITIGATE MODE
 COLLAPSE AND UNLOCK LLM DIVERSITY》](https://arxiv.org/pdf/2510.01171)
 - **[公众号封面.md](日常使用/公众号封面.md)** - 根据标题/类型匹配风格并输出公众号 HTML 封面代码
 - **[文章风格提取.md](日常使用/文章风格提取.md)** - 对文本风格进行多维度分析并结构化输出
