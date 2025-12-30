@@ -1,4 +1,4 @@
-帮我基于这个风格要求和内容生成 PPT:
+帮我基于以下风格要求与内容生成PPT：
 # 视觉风格与美术指导 (Visual Style & Art Direction)
 
 ## 插画风格
