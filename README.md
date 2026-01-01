@@ -13,6 +13,10 @@
 - **[en.md](官方提示词/Gemini3/en.md)** - 原版英文 Gemini 3 系统提示词，九大核心推理与规划原则
 - **[zh.md](官方提示词/Gemini3/zh.md)** - Gemini 3 系统提示词中文翻译版
 
+### 🤖 Claude
+
+- **[opus_4_5_soul_document_cleaned_up.md](官方提示词/Claude/opus_4_5_soul_document_cleaned_up.md)** - Claude 官方系统提示词文档
+
 ### 🤖 Kiro
 
 - **[System.md](官方提示词/Kiro/System.md)** - Kiro AI 助手系统提示词
