@@ -1,0 +1,12 @@
+{
+  "name": "awesome-prompts-search",
+  "version": "1.0.0",
+  "description": "提示词搜索前端",
+  "scripts": {
+    "build": "node build.js",
+    "preview": "npx http-server . -p 8080 -o"
+  },
+  "keywords": ["prompts", "search"],
+  "author": "",
+  "license": "MIT"
+}

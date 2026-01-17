@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>提示词搜索 - Awesome Prompts</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+  <div class="container">
+    <!-- 侧边栏 -->
+    <aside class="sidebar">
+      <div class="logo">
+        <a href="https://gitee.com/ye_sheng0839/awesome-prompts" target="_blank" rel="noopener noreferrer"
+          class="logo-link">
+          <img src="gitee.svg" alt="Gitee Logo" class="logo-icon">
+        </a>
+        <div class="logo-text">
+          <h1>提示词搜索</h1>
+          <p class="subtitle">Awesome Prompts</p>
+        </div>
+      </div>
+
+      <!-- 搜索栏 -->
+      <div class="search-section">
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="搜索提示词..." autocomplete="off" />
+          <button id="searchBtn" class="search-btn">
+            <i data-lucide="search"></i>
+          </button>
+        </div>
+
+        <!-- 搜索策略选择 -->
+        <div class="search-strategy">
+          <label class="strategy-label">检索策略：</label>
+          <div class="strategy-options">
+            <label class="checkbox-label">
+              <input type="checkbox" value="filename" checked> 文件名
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" value="category" checked> 分类目录
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" value="description" checked> 功能描述
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- 分类导航 -->
+      <div class="category-section">
+        <h3>
+          <i data-lucide="folder-open" class="icon-sm"></i>
+          分类浏览
+        </h3>
+        <div class="category-buttons">
+          <button class="category-btn active" data-category="all">全部</button>
+          <button class="category-btn" data-category="日常使用">日常使用</button>
+          <button class="category-btn" data-category="AI编程">AI编程</button>
+          <button class="category-btn" data-category="官方提示词">官方提示词</button>
+        </div>
+      </div>
+
+      <!-- 统计信息 -->
+      <div class="stats">
+        <div class="stat-item">
+          <span class="stat-label">总数：</span>
+          <span id="totalCount" class="stat-value">0</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">显示：</span>
+          <span id="displayCount" class="stat-value">0</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- 主内容区域 -->
+    <main class="main-content">
+      <!-- 搜索结果列表 -->
+      <div class="results-panel">
+        <div class="panel-header">
+          <h2 id="resultsTitle">全部提示词</h2>
+          <span id="resultCount" class="result-count">0 个结果</span>
+        </div>
+        <div id="resultsList" class="results-list">
+          <!-- 结果项将通过 JS 动态插入 -->
+        </div>
+      </div>
+
+      <!-- 预览面板 -->
+      <div class="preview-panel" id="previewPanel">
+        <div class="preview-placeholder">
+          <i data-lucide="file-text" class="placeholder-icon"></i>
+          <p>选择一个提示词查看详情</p>
+        </div>
+
+        <div class="preview-content" id="previewContent" style="display: none;">
+          <!-- 顶部操作栏 -->
+          <div class="preview-header">
+            <h2 id="previewTitle">提示词标题</h2>
+            <div class="preview-actions">
+              <button id="copyBtn" class="action-btn" title="复制内容">
+                <i data-lucide="copy" class="icon"></i>
+                <span class="text">复制</span>
+              </button>
+              <button id="downloadBtn" class="action-btn" title="下载文件">
+                <i data-lucide="download" class="icon"></i>
+                <span class="text">下载</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 内容预览 -->
+          <div class="preview-body">
+            <pre id="previewText" class="preview-text"></pre>
+          </div>
+
+          <!-- 底部功能描述 -->
+          <div class="preview-footer">
+            <div class="description-label">
+              <i data-lucide="lightbulb" class="icon-sm"></i>
+              功能描述
+            </div>
+            <div id="previewDescription" class="description-text">
+              暂无描述
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- 加载提示 -->
+  <div id="loadingOverlay" class="loading-overlay">
+    <div class="loading-spinner"></div>
+    <p>加载中...</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
