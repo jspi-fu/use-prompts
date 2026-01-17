@@ -4,9 +4,14 @@
   "description": "提示词搜索前端",
   "scripts": {
     "build": "node build.js",
+    "dev": "node build.js && npx http-server . -p 8080",
+    "watch": "npx nodemon --watch ../ --ext md,js --exec \"node build.js\"",
     "preview": "npx http-server . -p 8080 -o"
   },
-  "keywords": ["prompts", "search"],
+  "keywords": [
+    "prompts",
+    "search"
+  ],
   "author": "",
   "license": "MIT"
 }

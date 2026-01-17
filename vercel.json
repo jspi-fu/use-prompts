@@ -1,0 +1,7 @@
+{
+    "version": 2,
+    "buildCommand": "npm run build --prefix search",
+    "outputDirectory": "search",
+    "ignoreCommand": "git diff --quiet HEAD^ HEAD . ../",
+    "framework": null
+}
