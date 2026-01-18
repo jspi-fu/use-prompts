@@ -401,6 +401,7 @@ body {
     color: var(--text-secondary);
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
     padding-left: 22px;
@@ -689,5 +690,167 @@ body {
     .sidebar {
         width: 280px;
         min-width: 280px;
+    }
+}
+
+/* ========================================
+   移动端适配 (Max Width: 768px)
+   ======================================== */
+
+/* 移动端控件 (默认隐藏) */
+.menu-btn,
+.back-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    padding: 8px;
+    margin-right: 8px;
+    border-radius: var(--radius-sm);
+}
+
+.menu-btn:hover,
+.back-btn:hover {
+    background: var(--bg-hover);
+}
+
+.menu-btn svg,
+.back-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* 遮罩层 */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 90;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(2px);
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+@media (max-width: 768px) {
+
+    /* 显示移动端按钮 */
+    .menu-btn,
+    .back-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* 侧边栏改为抽屉式 */
+    .sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 100;
+        width: 280px;
+        box-shadow: none;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+        box-shadow: 4px 0 24px rgba(0, 0, 0, 0.15);
+    }
+
+    /* 侧边栏内容适配 */
+    .sidebar {
+        padding: 16px;
+        gap: 16px;
+        overflow-x: hidden;
+    }
+
+    .search-box {
+        flex-wrap: nowrap;
+    }
+
+    .search-box input {
+        min-width: 0;
+        padding: 10px 12px;
+    }
+
+    .search-strategy {
+        padding: 12px;
+    }
+
+    .strategy-options {
+        gap: 6px;
+    }
+
+    .checkbox-label {
+        padding: 5px 8px;
+        font-size: 0.8rem;
+    }
+
+    /* 结果列表全宽 */
+    .results-panel {
+        width: 100%;
+        min-width: 0;
+        border-right: none;
+    }
+
+    /* 预览面板全屏覆盖 */
+    .preview-panel {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 110;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        background: var(--bg-primary);
+    }
+
+    .preview-panel.active {
+        transform: translateX(0);
+    }
+
+    /* 调整预览内容布局 */
+    .preview-content {
+        margin: 0;
+        border-radius: 0;
+        border: none;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .preview-header {
+        padding: 16px;
+    }
+
+    .preview-header h2 {
+        font-size: 1.1rem;
+    }
+
+    .preview-text {
+        padding: 20px;
+        font-size: 0.9rem;
+    }
+
+    .preview-footer {
+        padding: 16px 20px;
+    }
+
+    /* Logo 调整 */
+    .logo {
+        margin-bottom: 8px;
     }
 }

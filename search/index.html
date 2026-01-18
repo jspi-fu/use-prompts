@@ -11,6 +11,9 @@
 
 <body>
   <div class="container">
+    <!-- 移动端遮罩 -->
+    <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
     <!-- 侧边栏 -->
     <aside class="sidebar">
       <div class="logo">
@@ -82,6 +85,9 @@
       <!-- 搜索结果列表 -->
       <div class="results-panel">
         <div class="panel-header">
+          <button id="menuBtn" class="menu-btn" title="打开菜单">
+            <i data-lucide="menu"></i>
+          </button>
           <h2 id="resultsTitle">全部提示词</h2>
           <span id="resultCount" class="result-count">0 个结果</span>
         </div>
@@ -100,6 +106,9 @@
         <div class="preview-content" id="previewContent" style="display: none;">
           <!-- 顶部操作栏 -->
           <div class="preview-header">
+            <button id="backBtn" class="back-btn" title="返回列表">
+              <i data-lucide="arrow-left"></i>
+            </button>
             <h2 id="previewTitle">提示词标题</h2>
             <div class="preview-actions">
               <button id="copyBtn" class="action-btn" title="复制内容">

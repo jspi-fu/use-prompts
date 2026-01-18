@@ -35,7 +35,11 @@ const elements = {
     downloadBtn: null,
     loadingOverlay: null,
     categoryBtns: null,
-    strategyCheckboxes: null
+    strategyCheckboxes: null,
+    menuBtn: null,
+    backBtn: null,
+    sidebar: null,
+    sidebarOverlay: null
 };
 
 /**
@@ -84,6 +88,10 @@ function initElements() {
     elements.loadingOverlay = document.getElementById('loadingOverlay');
     elements.categoryBtns = document.querySelectorAll('.category-btn');
     elements.strategyCheckboxes = document.querySelectorAll('.strategy-options input[type="checkbox"]');
+    elements.menuBtn = document.getElementById('menuBtn');
+    elements.backBtn = document.getElementById('backBtn');
+    elements.sidebar = document.querySelector('.sidebar');
+    elements.sidebarOverlay = document.getElementById('sidebarOverlay');
 }
 
 /**
@@ -112,6 +120,7 @@ function bindEvents() {
         btn.addEventListener('click', () => {
             const category = btn.dataset.category;
             setCategory(category);
+            toggleSidebar(false); // 移动端选择后关闭侧边栏
         });
     });
 
@@ -128,6 +137,27 @@ function bindEvents() {
 
     // 下载按钮
     elements.downloadBtn.addEventListener('click', downloadContent);
+
+    // 移动端菜单按钮
+    if (elements.menuBtn) {
+        elements.menuBtn.addEventListener('click', () => {
+            toggleSidebar(true);
+        });
+    }
+
+    // 移动端返回按钮
+    if (elements.backBtn) {
+        elements.backBtn.addEventListener('click', () => {
+            elements.previewPanel.classList.remove('active');
+        });
+    }
+
+    // 遮罩层点击关闭侧边栏
+    if (elements.sidebarOverlay) {
+        elements.sidebarOverlay.addEventListener('click', () => {
+            toggleSidebar(false);
+        });
+    }
 }
 
 /**
@@ -322,6 +352,9 @@ function showPreview(prompt) {
     document.querySelector('.preview-placeholder').style.display = 'none';
     elements.previewContent.style.display = 'flex';
 
+    // 移动端：显示全屏预览
+    elements.previewPanel.classList.add('active');
+
     // 填充数据
     elements.previewTitle.textContent = prompt.filename.replace('.md', '');
     elements.previewText.textContent = prompt.content;
@@ -399,6 +432,19 @@ function showError(message) {
   `;
     if (window.lucide) {
         window.lucide.createIcons();
+    }
+}
+
+/**
+ * 切换侧边栏显示状态
+ */
+function toggleSidebar(show) {
+    if (show) {
+        elements.sidebar.classList.add('active');
+        elements.sidebarOverlay.classList.add('active');
+    } else {
+        elements.sidebar.classList.remove('active');
+        elements.sidebarOverlay.classList.remove('active');
     }
 }
 
