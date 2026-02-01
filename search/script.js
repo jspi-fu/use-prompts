@@ -181,10 +181,15 @@ async function loadData() {
 
 /**
  * 执行搜索
+ * @param {boolean} updateUrl 是否更新 URL (默认 true)
  */
-function performSearch() {
+function performSearch(updateUrl = true) {
     const query = elements.searchInput.value.trim().toLowerCase();
     state.searchQuery = query;
+
+    if (updateUrl) {
+        updateURL(false);
+    }
 
     if (!query) {
         // 无搜索词，仅按分类过滤
@@ -450,3 +455,88 @@ function toggleSidebar(show) {
 
 // 启动应用
 document.addEventListener('DOMContentLoaded', init);
+
+/**
+ * 更新 URL 状态
+ * @param {boolean} pushHistory 是否推入历史记录 (true: pushState, false: replaceState)
+ */
+function updateURL(pushHistory = false) {
+    const url = new URL(window.location);
+    
+    // 更新搜索参数
+    if (state.searchQuery) {
+        url.searchParams.set('q', state.searchQuery);
+    } else {
+        url.searchParams.delete('q');
+    }
+    
+    // 更新文件参数
+    if (state.selectedPrompt) {
+        url.searchParams.set('file', state.selectedPrompt.filename);
+    } else {
+        url.searchParams.delete('file');
+    }
+    
+    // 执行历史记录更新
+    if (pushHistory) {
+        window.history.pushState({}, '', url);
+    } else {
+        window.history.replaceState({}, '', url);
+    }
+}
+
+/**
+ * 从 URL 恢复状态
+ */
+function restoreStateFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    const query = params.get('q');
+    const filename = params.get('file');
+    
+    // 恢复搜索状态
+    if (query !== null) {
+        elements.searchInput.value = query;
+        // 执行搜索但不更新 URL
+        performSearch(false);
+    } else {
+        performSearch(false);
+    }
+    
+    // 恢复文件选择状态
+    if (filename) {
+        const prompt = state.prompts.find(p => p.filename === filename);
+        if (prompt) {
+            // 选中文件但不更新 URL
+            selectPrompt(prompt.id, false);
+        }
+    } else if (state.selectedPrompt) {
+        // 如果 URL 中没有 file 参数，但在 state 中有选中的文件，则清除选中状态
+        clearSelection();
+    }
+}
+
+/**
+ * 清除选中状态
+ */
+function clearSelection() {
+    state.selectedPrompt = null;
+    
+    // 移除列表选中样式
+    if (elements.resultsList) {
+        const activeItem = elements.resultsList.querySelector('.result-item.active');
+        if (activeItem) {
+            activeItem.classList.remove('active');
+        }
+    }
+    
+    // 隐藏预览面板
+    if (window.innerWidth <= 768) {
+        elements.previewPanel.classList.remove('active');
+    }
+    
+    // 恢复占位符
+    const placeholder = document.querySelector('.preview-placeholder');
+    if (placeholder) placeholder.style.display = 'flex';
+    if (elements.previewContent) elements.previewContent.style.display = 'none';
+}
+
