@@ -55,8 +55,9 @@ async function init() {
     // 加载数据
     await loadData();
 
-    // 初始渲染
-    render();
+    restoreStateFromURL();
+
+    window.addEventListener('popstate', restoreStateFromURL);
 
     // 隐藏加载动画
     hideLoading();
@@ -165,14 +166,29 @@ function bindEvents() {
  */
 async function loadData() {
     try {
-        const response = await fetch('./prompts-index.json');
-        if (!response.ok) {
-            throw new Error('无法加载索引文件');
+        const cacheBuster = Date.now();
+        const urls = [
+            `./prompts-index.json?v=${cacheBuster}`,
+            `/prompts-index.json?v=${cacheBuster}`,
+            `prompts-index.json?v=${cacheBuster}`
+        ];
+        let lastError;
+        for (const url of urls) {
+            try {
+                const response = await fetch(url, { cache: 'no-store' });
+                if (!response.ok) {
+                    throw new Error(`无法加载索引文件: ${response.status}`);
+                }
+                const data = await response.json();
+                state.prompts = data.prompts || [];
+                state.filteredPrompts = [...state.prompts];
+                console.log(`✅ 加载了 ${state.prompts.length} 个提示词`);
+                return;
+            } catch (error) {
+                lastError = error;
+            }
         }
-        const data = await response.json();
-        state.prompts = data.prompts || [];
-        state.filteredPrompts = [...state.prompts];
-        console.log(`✅ 加载了 ${state.prompts.length} 个提示词`);
+        throw lastError || new Error('无法加载索引文件');
     } catch (error) {
         console.error('❌ 加载数据失败:', error);
         showError('加载数据失败，请确保已运行 npm run build 生成索引文件');
@@ -334,11 +350,15 @@ function escapeRegExp(string) {
 /**
  * 选中提示词并显示预览
  */
-function selectPrompt(id) {
+function selectPrompt(id, updateUrl = true) {
     const prompt = state.prompts.find(p => p.id === id);
     if (!prompt) return;
 
     state.selectedPrompt = prompt;
+
+    if (updateUrl) {
+        updateURL(true);
+    }
 
     // 更新结果列表中的选中状态
     document.querySelectorAll('.result-item').forEach(item => {
@@ -451,6 +471,69 @@ function toggleSidebar(show) {
         elements.sidebar.classList.remove('active');
         elements.sidebarOverlay.classList.remove('active');
     }
+}
+
+function updateURL(pushHistory = false) {
+    const url = new URL(window.location.href);
+
+    if (state.searchQuery) {
+        url.searchParams.set('q', state.searchQuery);
+    } else {
+        url.searchParams.delete('q');
+    }
+
+    if (state.selectedPrompt) {
+        url.searchParams.set('file', state.selectedPrompt.filename);
+    } else {
+        url.searchParams.delete('file');
+    }
+
+    if (pushHistory) {
+        window.history.pushState({}, '', url);
+    } else {
+        window.history.replaceState({}, '', url);
+    }
+}
+
+function restoreStateFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    const query = params.get('q');
+    const filename = params.get('file');
+
+    if (query !== null) {
+        elements.searchInput.value = query;
+        performSearch(false);
+    } else {
+        performSearch(false);
+    }
+
+    if (filename) {
+        const prompt = state.prompts.find(p => p.filename === filename);
+        if (prompt) {
+            selectPrompt(prompt.id, false);
+        }
+    } else if (state.selectedPrompt) {
+        clearSelection();
+    }
+}
+
+function clearSelection() {
+    state.selectedPrompt = null;
+
+    if (elements.resultsList) {
+        const activeItem = elements.resultsList.querySelector('.result-item.active');
+        if (activeItem) {
+            activeItem.classList.remove('active');
+        }
+    }
+
+    if (window.innerWidth <= 768) {
+        elements.previewPanel.classList.remove('active');
+    }
+
+    const placeholder = document.querySelector('.preview-placeholder');
+    if (placeholder) placeholder.style.display = 'flex';
+    if (elements.previewContent) elements.previewContent.style.display = 'none';
 }
 
 // 启动应用
