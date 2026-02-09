@@ -55,8 +55,17 @@ async function init() {
     // 加载数据
     await loadData();
 
-    // 初始渲染
-    render();
+    const initialQuery = getInitialQueryFromUrl();
+    if (initialQuery) {
+        elements.searchInput.value = initialQuery;
+        performSearch();
+    } else {
+        render();
+    }
+    const initialFile = getInitialFileFromUrl();
+    if (initialFile) {
+        selectPromptByFile(initialFile);
+    }
 
     // 隐藏加载动画
     hideLoading();
@@ -149,6 +158,8 @@ function bindEvents() {
     if (elements.backBtn) {
         elements.backBtn.addEventListener('click', () => {
             elements.previewPanel.classList.remove('active');
+            state.selectedPrompt = null;
+            updateUrlWithFile(null);
         });
     }
 
@@ -183,8 +194,10 @@ async function loadData() {
  * 执行搜索
  */
 function performSearch() {
-    const query = elements.searchInput.value.trim().toLowerCase();
+    const rawQuery = elements.searchInput.value.trim();
+    const query = rawQuery.toLowerCase();
     state.searchQuery = query;
+    updateUrlWithQuery(rawQuery);
 
     if (!query) {
         // 无搜索词，仅按分类过滤
@@ -342,6 +355,7 @@ function selectPrompt(id) {
 
     // 显示预览内容
     showPreview(prompt);
+    updateUrlWithFile(prompt.filename);
 }
 
 /**
@@ -445,6 +459,64 @@ function toggleSidebar(show) {
     } else {
         elements.sidebar.classList.remove('active');
         elements.sidebarOverlay.classList.remove('active');
+    }
+}
+
+function getInitialQueryFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    const q = params.get('query') || params.get('q');
+    if (q) return q;
+    const href = window.location.href;
+    const marker = 'query?=';
+    const i = href.indexOf(marker);
+    if (i !== -1) return decodeURIComponent(href.substring(i + marker.length));
+    return null;
+}
+
+function updateUrlWithQuery(raw) {
+    const url = new URL(window.location.href);
+    if (raw) {
+        url.searchParams.set('query', raw);
+    } else {
+        url.searchParams.delete('query');
+    }
+    history.replaceState(null, '', url.toString());
+}
+
+function getInitialFileFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    const f = params.get('file');
+    return f || null;
+}
+
+function updateUrlWithFile(raw) {
+    const url = new URL(window.location.href);
+    if (raw) {
+        url.searchParams.set('file', raw);
+    } else {
+        url.searchParams.delete('file');
+    }
+    history.replaceState(null, '', url.toString());
+}
+
+function selectPromptByFile(fileParam) {
+    if (!fileParam) return;
+    let prompt = null;
+    const asNumber = Number(fileParam);
+    if (!Number.isNaN(asNumber)) {
+        prompt = state.prompts.find(p => p.id === asNumber) || null;
+    }
+    if (!prompt) {
+        const q = fileParam.toLowerCase();
+        prompt =
+            state.prompts.find(p => p.filename.toLowerCase() === q) ||
+            state.prompts.find(p => p.path.toLowerCase() === q) ||
+            state.prompts.find(p => p.filename.toLowerCase().includes(q)) ||
+            null;
+    }
+    if (prompt) {
+        selectPrompt(prompt.id);
+        updateUrlWithFile(prompt.filename);
     }
 }
 
