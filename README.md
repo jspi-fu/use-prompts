@@ -36,7 +36,7 @@
 - **[技术架构图.md](日常使用/图片生成/技术架构图.md)** - 生成专业技术架构图，展示系统或流程
 - **[数据可视化.md](日常使用/图片生成/数据可视化.md)** - 数据集转化为直观的数据可视化图表
 - **通用提示词构建**
-  - **[README.md](日常使用/图片生成/通用提示词构建/README.md)** - Nano Banana提示词、风格与资源目录
+  - **[General_Prompts_README.md](日常使用/图片生成/通用提示词构建/README.md)** - Nano Banana提示词、风格与资源目录
   - **[Nanobanana.md](日常使用/图片生成/通用提示词构建/Nanobanana.md)** - 简单描述转Nano Banana Pro最佳实践提示词
 
 ### 🎬 视频生成
@@ -70,7 +70,7 @@
 
 ## 💻 AI编程
 
-- **[README.md](AI编程/README.md)** - AI编程思考：从demo到产品的挑战与思考
+- **[AI_Coding_README.md](AI编程/README.md)** - AI编程思考：从demo到产品的挑战与思考
 
 ### 🔙 后端
 
@@ -80,7 +80,7 @@
 
 ### 🎯 前端
 
-- **[README.md](AI编程/前端/README.md)** - 前端UI库按设计风格、功能特性和技术栈分类整理
+- **[Frontend_README.md](AI编程/前端/README.md)** - 前端UI库按设计风格、功能特性和技术栈分类整理
 - **[simple-rule.md](AI编程/前端/simple-rule.md)** - 前端UI/UX设计与开发的简单原则与规范，可以有效去除AI味
 
 #### 框架
@@ -121,11 +121,11 @@
 
 > 🎯 **重磅推荐**：两套专业级全局提示词，全面提升 AI 编程能力！
 
-- **[README.md](AI编程/全局提示词/README.md)** - 全局提示词使用指南，适配不同编程能力的AI助手和IDE
+- **[Global_Prompts_README.md](AI编程/全局提示词/README.md)** - 全局提示词使用指南，适配不同编程能力的AI助手和IDE
 
 #### 🚀 reliable-coding
 
-- **[README.md](AI编程/全局提示词/reliable-coding/README.md)** - Reliable Coding Agent使用指南，适用于编程能力强的AI/IDE
+- **[Reliable_Coding_README.md](AI编程/全局提示词/reliable-coding/README.md)** - Reliable Coding Agent使用指南，适用于编程能力强的AI/IDE
 - **[Claude-code.md](AI编程/全局提示词/reliable-coding/Claude-code.md)** - Claude Code版本
 - **[Codex.md](AI编程/全局提示词/reliable-coding/Codex.md)** - Codex版本
 - **[Cursor.md](AI编程/全局提示词/reliable-coding/Cursor.md)** - Cursor版本
@@ -133,7 +133,7 @@
 
 #### 🛡️ RIPER5
 
-- **[README.md](AI编程/全局提示词/RIPER5/README.md)** - RIPER5五阶段工作流协议，适用于编程能力弱的AI/IDE
+- **[RIPER5_README.md](AI编程/全局提示词/RIPER5/README.md)** - RIPER5五阶段工作流协议，适用于编程能力弱的AI/IDE
 - **[RIPER5.md](AI编程/全局提示词/RIPER5/RIPER5.md)** - RIPER5完整协议文档
 
 ---
