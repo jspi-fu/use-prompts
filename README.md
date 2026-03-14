@@ -1,17 +1,28 @@
 ![Cover](assets/Cover.png)
-
-# AI提示词与规范
+<div align="center">
+  <a href="https://gitee.com/ye_sheng0839/awesome-prompts/stargazers"><img src="https://gitee.com/ye_sheng0839/awesome-prompts/badge/star.svg?theme=dark" alt="Stars"></a>
+  <a href="https://www.apache.org/licenses/LICENSE-2.0"><img src="https://img.shields.io/badge/License-Apache%202.0-green.svg" alt="License"></a>
+  <a href="https://awesome-prompts.311factory.top/"><img src="https://img.shields.io/badge/Website-311factory.top-blue" alt="Website"></a>
+</div>
 
 本项目用于集中展示各类 AI 提示词与规范。覆盖日常使用与专业编程，以下按目录结构列出所有提示词与规范，便于快速定位。
 
-🎉**2026.2.23 内容迁移！**：论文撰写相关内容已作为独立项目进行维护，论文写作经验+提示词+ skills 一键获取！新项目地址为：👉 **https://gitee.com/ye_sheng0839/paper-writing** 👈
+> [!NOTE]
+> **📚 作者全新力作！** 专为零基础学习者打造的 AI 编程入门教程 —— [【hello-vibe】](https://gitee.com/ye_sheng0839/hello-vibe)
+> 
+> 从 Vibe Coding 核心理念到实战技巧，帮助你完成从程序员到项目师的思维转变。
+> 在线阅读：👉 **<https://hello-vibe.311factory.top>** 👈
 
-**2026.1.24 网页搜索！**：直接在网页中浏览、搜索、复制&下载，地址：https://awesome-prompts.311factory.top/
+> [!TIP]
+> 🎉 **2026.2.23 内容迁移！**：论文撰写相关内容已作为独立项目进行维护，论文写作经验+提示词+ skills 一键获取！新项目地址为：**<https://gitee.com/ye_sheng0839/paper-writing>**
+>
+>
+> **2026.1.24 网页搜索！**：直接在网页中浏览、搜索、复制&下载，地址：**<https://awesome-prompts.311factory.top/>**
 
 ## 🛠️ 通用工具
 ---
 - **[提示词设计(单轮模拟).md](提示词设计(单轮模拟).md)** - 模块化可复用提示词模板设计，单轮模拟，一次交付
-- **[提示词设计(多轮交互).md](提示词设计(多轮交互).md)** - 4-D方法论优化提示词，多轮交互，明确需求
+- **[提示词设计(多轮交互).md](提示词设计(多轮交互).md)** - 英文原版4-D方法论优化提示词，多轮交互，明确需求
 
 ## 🏛️ 官方提示词
 ---
@@ -59,6 +70,7 @@
 ### 📖 辅助学习
 
 - **[课间讲解.md](日常使用/辅助学习/课间讲解.md)** - 专业学科课件逐页系统学习与详细讲解
+- **[NotebookLLM.md](日常使用/NotebookLLM.md)** - NotebookLLM 内容分析提示词模板，包含关键问题法、角色扮演、文献综述等多种分析模式
 
 ### � 文章撰写
 
