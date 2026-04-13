@@ -1,4 +1,4 @@
-# Awesome Nano Banana Pro 🍌
+# Nano Banana Best Practices
 
 > A curated collection of the **best Nano Banana prompts**, image generation styles, and resources for advanced AI visual experiments.
 
