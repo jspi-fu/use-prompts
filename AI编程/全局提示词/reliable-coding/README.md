@@ -48,7 +48,7 @@ C:\users\你的用户名\.gemini\GEMINI.md
 ```
 
 ### Cursor
-将[Cursor.md](Cursor.md)的内容复制到 Cursor 的全局 `User Rules` 中即可。
+由于 Cursor 已经支持识别项目目录中的`AGENTS.md`或`CLAUDE.md`，因此可以参照`ClaudeCode`或者`Codex`的方法直接使用。
 
 ## 核心优势
 

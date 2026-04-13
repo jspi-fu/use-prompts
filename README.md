@@ -56,7 +56,7 @@
 - **[证件照.md](日常使用/图片生成/证件照.md)** - 专业男女证件照生成提示词
 - **通用提示词构建**
   - **[Nanobanana.md](日常使用/图片生成/通用提示词构建/Nanobanana.md)** - 简单描述转Nano Banana Pro最佳实践提示词
-  - **[BestPractices.md](日常使用/图片生成/通用提示词构建/Best Practices.md)** - Nano Banana提示词、风格与资源目录
+  - **[BestPractices.md](日常使用/图片生成/通用提示词构建/BestPractices.md)** - Nano Banana提示词、风格与资源目录
 
 ### 🎬 视频生成
 
@@ -96,71 +96,73 @@
 
 ## 💻 AI编程
 ---
-- **[AI_Coding_README.md](AI编程/README.md)** - AI编程思考：从demo到产品的挑战与思考
+- **[AIProgrammingREADME.md](AI编程/README.md)** - AI编程思考：从demo到产品的挑战与思考
 
 ### 🔙 后端
 
 - **[Django.md](AI编程/后端/Django.md)** - Python+Django，可扩展Web应用开发框架
 - **[Fastapi.md](AI编程/后端/Fastapi.md)** - Python3.10+，FastAPI+Pydantic v2，异步优先HTTP API
-- **[java-springboot.md](AI编程/后端/java-springboot.md)** - Java17/21+Spring Boot3.x，标准REST API
+- **[JavaSpringBoot.md](AI编程/后端/JavaSpringBoot.md)** - Java17/21+Spring Boot3.x，标准REST API
 
 ### 🎯 前端
 
-- **[Frontend_README.md](AI编程/前端/README.md)** - 前端UI库按设计风格、功能特性和技术栈分类整理
-- **[simple-rule.md](AI编程/前端/simple-rule.md)** - 前端UI/UX设计与开发的简单原则与规范，可以有效去除AI味
+- **[FrontendREADME.md](AI编程/前端/README.md)** - 前端UI库按设计风格、功能特性和技术栈分类整理
+- **[SimpleRule.md](AI编程/前端/SimpleRule.md)** - 前端UI/UX设计与开发的简单原则与规范，可以有效去除AI味
+- **[FastGenerate.md](AI编程/前端/FastGenerate.md)** - “有格调的”前端快速生成
+
+> 更多前端风格请参考：<https://github.com/VoltAgent/awesome-design-md>
 
 #### 框架
 
-- **[angular.md](AI编程/前端/框架/angular.md)** - Angular18+TS+Jest，使用`for-next.function.ts`
-- **[HTML+CSS.md](AI编程/前端/框架/HTML+CSS.md)** - HTML和CSS最佳实践，语义化、可访问性和响应式设计
+- **[Angular.md](AI编程/前端/框架/Angular.md)** - Angular18+TS+Jest，使用`for-next.function.ts`
+- **[HtmlCss.md](AI编程/前端/框架/HtmlCss.md)** - HTML和CSS最佳实践，语义化、可访问性和响应式设计
 - **[React.md](AI编程/前端/框架/React.md)** - TypeScript+Gatsby+React+Tailwind，函数式声明式编程
-- **[React-components-creation.md](AI编程/前端/框架/React-components-creation.md)** - React/TS组件生成与适配流程（含Tailwind、shadcn/ui）
-- **[Vue3-Nuxt.md](AI编程/前端/框架/Vue3-Nuxt.md)** - Vue3+Nuxt3+TS+Tailwind，Composition API
+- **[ReactComponentsCreation.md](AI编程/前端/框架/ReactComponentsCreation.md)** - React/TS组件生成与适配流程（含Tailwind、shadcn/ui）
+- **[Vue3Nuxt.md](AI编程/前端/框架/Vue3Nuxt.md)** - Vue3+Nuxt3+TS+Tailwind，Composition API
 
 #### 🎨 UI美化
 
-- **[UI美化.md](AI编程/前端/UI美化/UI美化.md)** - 高标准产品视觉设计方法论：挖掘需求、方案分级、质检
-- **[前端美化lazy.md](AI编程/前端/UI美化/前端美化lazy.md)** - 前端美化懒人版，快速修复界面，打造简约高级风格
-- **[UI转json.md](AI编程/前端/UI美化/UI转json.md)** - UI转JSON设计解析，将UI截图转换为JSON格式，便于AI复刻
+- **[UiBeautify.md](AI编程/前端/UI美化/UiBeautify.md)** - 高标准产品视觉设计方法论：挖掘需求、方案分级、质检
+- **[UiBeautifyLazy.md](AI编程/前端/UI美化/UiBeautifyLazy.md)** - 前端美化懒人版，快速修复界面，打造简约高级风格
+- **[UiToJson.md](AI编程/前端/UI美化/UiToJson.md)** - UI转JSON设计解析，将UI截图转换为JSON格式，便于AI复刻
 
 ### 🔄 全栈
 
-- **[HTML+JS+CSS.md](AI编程/全栈/HTML+JS+CSS.md)** - Shopify主题开发，Liquid、HTML、CSS、JS和Online Store 2.0
+- **[HtmlJsCss.md](AI编程/全栈/HtmlJsCss.md)** - Shopify主题开发，Liquid、HTML、CSS、JS和Online Store 2.0
 - **[Nextjs.md](AI编程/全栈/Nextjs.md)** - Next.js14+Solidity+TypeScript+Viem/Wagmi，Web3全栈开发
-- **[NuxtJS.md](AI编程/全栈/NuxtJS.md)** - Nuxt.js全栈开发规范
+- **[NuxtJs.md](AI编程/全栈/NuxtJs.md)** - Nuxt.js全栈开发规范
 
 ### 🕷️ 爬虫
 
-- **[python爬虫.md](AI编程/爬虫/python爬虫.md)** - Python网络爬虫与数据提取，requests、BeautifulSoup等工具使用
+- **[PythonCrawler.md](AI编程/爬虫/PythonCrawler.md)** - Python网络爬虫与数据提取，requests、BeautifulSoup等工具使用
 
 ### 🚀 部署
 
 - **[Netlify.md](AI编程/部署/Netlify.md)** - Netlify平台：functions、Blobs、Image CDN等功能使用
-- **[Edgeone.md](AI编程/部署/Edgeone.md)** - Cloudflare EdgeOne配置与实践
+- **[EdgeOne.md](AI编程/部署/EdgeOne.md)** - Cloudflare EdgeOne配置与实践
 
 ### 📋 代码规范
 
-- **[code-guidelines.md](AI编程/代码规范/code-guidelines.md)** - 代码编写与修改的沟通约束准则
-- **[code-styles.md](AI编程/代码规范/code-styles.md)** - 代码风格分析与一致性检查提示
+- **[CodeGuidelines.md](AI编程/代码规范/CodeGuidelines.md)** - 代码编写与修改的沟通约束准则
+- **[CodeStyles.md](AI编程/代码规范/CodeStyles.md)** - 代码风格分析与一致性检查提示
 
 ### ⭐✨ 全局提示词 ⭐✨
 
 > 🎯 **重磅推荐**：两套专业级全局提示词，全面提升 AI 编程能力！
 
-- **[Global_Prompts_README.md](AI编程/全局提示词/README.md)** - 全局提示词使用指南，适配不同编程能力的AI助手和IDE
+- **[GlobalPromptsREADME.md](AI编程/全局提示词/README.md)** - 全局提示词使用指南，适配不同编程能力的AI助手和IDE
 
-#### 🚀 reliable-coding
+#### 🚀 Reliable Coding
 
-- **[Reliable_Coding_README.md](AI编程/全局提示词/reliable-coding/README.md)** - Reliable Coding Agent使用指南，适用于编程能力强的AI/IDE
-- **[Claude-code.md](AI编程/全局提示词/reliable-coding/Claude-code.md)** - Claude Code版本
+- **[ReliableCodingREADME.md](AI编程/全局提示词/reliable-coding/README.md)** - Reliable Coding Agent使用指南，适用于编程能力强的AI/IDE
+- **[ClaudeCode.md](AI编程/全局提示词/reliable-coding/ClaudeCode.md)** - Claude Code版本
 - **[Codex.md](AI编程/全局提示词/reliable-coding/Codex.md)** - Codex版本
-- **[Cursor.md](AI编程/全局提示词/reliable-coding/Cursor.md)** - Cursor版本
-- **[Gemini-CLI.md](AI编程/全局提示词/reliable-coding/Gemini-CLI.md)** - Gemini CLI版本
+- **[GeminiCli.md](AI编程/全局提示词/reliable-coding/GeminiCli.md)** - Gemini CLI版本
 
 #### 🛡️ RIPER5
 
-- **[RIPER5_README.md](AI编程/全局提示词/RIPER5/README.md)** - RIPER5五阶段工作流协议，适用于编程能力弱的AI/IDE
-- **[RIPER5.md](AI编程/全局提示词/RIPER5/RIPER5.md)** - RIPER5完整协议文档
+- **[Riper5README.md](AI编程/全局提示词/RIPER5/README.md)** - RIPER5五阶段工作流协议，适用于编程能力弱的AI/IDE
+- **[Riper5.md](AI编程/全局提示词/RIPER5/Riper5.md)** - RIPER5完整协议文档
 
 ---
 
