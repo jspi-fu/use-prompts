@@ -148,20 +148,24 @@
 
 ### ⭐✨ 全局提示词 ⭐✨
 
-> 🎯 **重磅推荐**：两套专业级全局提示词，全面提升 AI 编程能力！
+> 🎯 **重磅推荐**：精选全局提示词，全面提升 AI 编程能力！
 
-- **[GlobalPromptsREADME.md](AI编程/全局提示词/README.md)** - 全局提示词使用指南，适配不同编程能力的AI助手和IDE
+- **[GlobalPromptsREADME.md](AI编程/全局提示词/README.md)** - 全局提示词使用指南，根据使用目的选择适合的提示词
+
+#### 🎯 Karpathy（最新推荐）
+
+- **[Karpathy.md](AI编程/全局提示词/Karpathy.md)** - 源自 Andrej Karpathy 的四条行为准则，简洁实用，契合当前全局提示词的“兜底”定位，与skill、mcp等其他配置配合使用效果最佳。
 
 #### 🚀 Reliable Coding
 
-- **[ReliableCodingREADME.md](AI编程/全局提示词/reliable-coding/README.md)** - Reliable Coding Agent使用指南，适用于编程能力强的AI/IDE
+- **[ReliableCodingREADME.md](AI编程/全局提示词/reliable-coding/README.md)** - Reliable Coding Agent使用指南，能够在无需任何额外配置的情况下完成小项目的规划与开发，提供比openspec更加轻量化的项目记忆管理。
 - **[ClaudeCode.md](AI编程/全局提示词/reliable-coding/ClaudeCode.md)** - Claude Code版本
 - **[Codex.md](AI编程/全局提示词/reliable-coding/Codex.md)** - Codex版本
 - **[GeminiCli.md](AI编程/全局提示词/reliable-coding/GeminiCli.md)** - Gemini CLI版本
 
-#### 🛡️ RIPER5
+#### 🛡️ RIPER5（⚠️ 已过时，仅供学习）
 
-- **[Riper5README.md](AI编程/全局提示词/RIPER5/README.md)** - RIPER5五阶段工作流协议，适用于编程能力弱的AI/IDE
+- **[Riper5README.md](AI编程/全局提示词/RIPER5/README.md)** - RIPER5五阶段工作流协议，当前模型能力下已显冗余，不推荐继续使用
 - **[Riper5.md](AI编程/全局提示词/RIPER5/Riper5.md)** - RIPER5完整协议文档
 
 ---
