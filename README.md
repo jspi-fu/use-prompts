@@ -33,7 +33,8 @@
 
 ### 🤖 Claude
 
-- **[opus_4_5_soul_document_cleaned_up.md](官方提示词/Claude/opus_4_5_soul_document_cleaned_up.md)** - Claude官方系统提示词文档
+- **[ClaudeOpusLatest.md](官方提示词/Claude/ClaudeOpusLatest.md)** - Claude Opus 4.7 最新系统提示词
+- **[ClaudeDesign.md](官方提示词/Claude/ClaudeDesign.md)** - Claude Design 系统提示词，可学习借鉴
 
 ### 🤖 Kiro
 
@@ -158,10 +159,10 @@
 
 #### 🚀 Reliable Coding
 
-- **[ReliableCodingREADME.md](AI编程/全局提示词/reliable-coding/README.md)** - Reliable Coding Agent使用指南，能够在无需任何额外配置的情况下完成小项目的规划与开发，提供比openspec更加轻量化的项目记忆管理。
-- **[ClaudeCode.md](AI编程/全局提示词/reliable-coding/ClaudeCode.md)** - Claude Code版本
-- **[Codex.md](AI编程/全局提示词/reliable-coding/Codex.md)** - Codex版本
-- **[GeminiCli.md](AI编程/全局提示词/reliable-coding/GeminiCli.md)** - Gemini CLI版本
+- **[ReliableCodingREADME.md](AI编程/全局提示词/ReliableCoding/README.md)** - Reliable Coding Agent使用指南，能够在无需任何额外配置的情况下完成小项目的规划与开发，提供比openspec更加轻量化的项目记忆管理。
+- **[ClaudeCode.md](AI编程/全局提示词/ReliableCoding/ClaudeCode.md)** - Claude Code版本
+- **[Codex.md](AI编程/全局提示词/ReliableCoding/Codex.md)** - Codex版本
+- **[GeminiCli.md](AI编程/全局提示词/ReliableCoding/GeminiCli.md)** - Gemini CLI版本
 
 #### 🛡️ RIPER5（⚠️ 已过时，仅供学习）
 
