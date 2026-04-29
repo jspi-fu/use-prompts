@@ -95,9 +95,12 @@
 - **[文本分析专家.md](日常使用/角色扮演/文本分析专家.md)** - 专业文本分析与解读
 - **[造物主.md](日常使用/角色扮演/造物主.md)** - 创意构思与世界观构建
 
-## 💻 AI编程
+### 🤖 DeepSeek 专题
+
+- **[DeepSeek专题.md](日常使用/DeepSeek专题.md)** - DeepSeek 专用提示词，包含MAX思考模式、角色扮演模式、纯分析模式
+
+## 💻 [AI编程](AI编程/README.md)
 ---
-- **[AIProgrammingREADME.md](AI编程/README.md)** - AI编程思考：从demo到产品的挑战与思考
 
 ### 🔙 后端
 
@@ -105,9 +108,8 @@
 - **[Fastapi.md](AI编程/后端/Fastapi.md)** - Python3.10+，FastAPI+Pydantic v2，异步优先HTTP API
 - **[JavaSpringBoot.md](AI编程/后端/JavaSpringBoot.md)** - Java17/21+Spring Boot3.x，标准REST API
 
-### 🎯 前端
+### 🎯 [前端](AI编程/前端/README.md)
 
-- **[FrontendREADME.md](AI编程/前端/README.md)** - 前端UI库按设计风格、功能特性和技术栈分类整理
 - **[SimpleRule.md](AI编程/前端/SimpleRule.md)** - 前端UI/UX设计与开发的简单原则与规范，可以有效去除AI味
 - **[FastGenerate.md](AI编程/前端/FastGenerate.md)** - “有格调的”前端快速生成
 
@@ -147,29 +149,27 @@
 - **[CodeGuidelines.md](AI编程/代码规范/CodeGuidelines.md)** - 代码编写与修改的沟通约束准则
 - **[CodeStyles.md](AI编程/代码规范/CodeStyles.md)** - 代码风格分析与一致性检查提示
 
-### ⭐✨ 全局提示词 ⭐✨
+### ⭐✨ [全局提示词](AI编程/全局提示词/README.md) ✨⭐
 
-> 🎯 **重磅推荐**：精选全局提示词，全面提升 AI 编程能力！
-
-- **[GlobalPromptsREADME.md](AI编程/全局提示词/README.md)** - 全局提示词使用指南，根据使用目的选择适合的提示词
+> 精选全局提示词，全面提升 AI 编程能力！
 
 #### 🎯 Karpathy（最新推荐）
 
 - **[Karpathy.md](AI编程/全局提示词/Karpathy.md)** - 源自 Andrej Karpathy 的四条行为准则，简洁实用，契合当前全局提示词的“兜底”定位，与skill、mcp等其他配置配合使用效果最佳。
 
-#### 🚀 Reliable Coding
+#### 🚀 [Reliable Coding](AI编程/全局提示词/ReliableCoding/README.md)
 
-- **[ReliableCodingREADME.md](AI编程/全局提示词/ReliableCoding/README.md)** - Reliable Coding Agent使用指南，能够在无需任何额外配置的情况下完成小项目的规划与开发，提供比openspec更加轻量化的项目记忆管理。
+> 能够在无需任何额外配置的情况下完成小项目的规划与开发，提供比openspec更加轻量化的项目记忆管理。
+
 - **[ClaudeCode.md](AI编程/全局提示词/ReliableCoding/ClaudeCode.md)** - Claude Code版本
 - **[Codex.md](AI编程/全局提示词/ReliableCoding/Codex.md)** - Codex版本
 - **[GeminiCli.md](AI编程/全局提示词/ReliableCoding/GeminiCli.md)** - Gemini CLI版本
 
-#### 🛡️ RIPER5（⚠️ 已过时，仅供学习）
+#### [RIPER5](AI编程/全局提示词/RIPER5/README.md)
 
-- **[Riper5README.md](AI编程/全局提示词/RIPER5/README.md)** - RIPER5五阶段工作流协议，当前模型能力下已显冗余，不推荐继续使用
+> RIPER5五阶段工作流协议，当前模型能力下已显冗余，不推荐继续使用。
+
 - **[Riper5.md](AI编程/全局提示词/RIPER5/Riper5.md)** - RIPER5完整协议文档
 
----
 
-> 说明：使用范围集中在本 README，文档正文聚焦具体准则与示例。
 
