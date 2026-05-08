@@ -60,5 +60,5 @@ temp/
 
 # else
 search/feature-url-navigation.md
-prompts-index.json
+search/prompts-index.json
 skills-lock.json
