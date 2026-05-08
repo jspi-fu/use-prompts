@@ -9,6 +9,8 @@ desktop.ini
 *.swp
 *.swo
 .cursor/
+.trae/
+.agents/
 
 # Dependencies & build outputs
 node_modules/
@@ -57,6 +59,6 @@ temp/
 *.log
 
 # else
-.agentdocs/
-自用/
 search/feature-url-navigation.md
+prompts-index.json
+skills-lock.json
