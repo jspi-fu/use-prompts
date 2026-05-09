@@ -10,6 +10,7 @@ const state = {
     currentCategory: 'all',// 当前分类
     searchQuery: '',       // 搜索查询
     selectedPrompt: null,  // 选中的提示词
+    viewMode: 'raw',       // 预览模式：'raw' | 'rendered'
     searchStrategies: {    // 搜索策略
         filename: true,
         category: true,
@@ -30,7 +31,9 @@ const elements = {
     previewContent: null,
     previewTitle: null,
     previewText: null,
+    previewRendered: null,
     previewDescription: null,
+    renderToggleBtn: null,
     copyBtn: null,
     downloadBtn: null,
     loadingOverlay: null,
@@ -92,6 +95,8 @@ function initElements() {
     elements.previewTitle = document.getElementById('previewTitle');
     elements.previewText = document.getElementById('previewText');
     elements.previewDescription = document.getElementById('previewDescription');
+    elements.renderToggleBtn = document.getElementById('renderToggleBtn');
+    elements.previewRendered = document.getElementById('previewRendered');
     elements.copyBtn = document.getElementById('copyBtn');
     elements.downloadBtn = document.getElementById('downloadBtn');
     elements.loadingOverlay = document.getElementById('loadingOverlay');
@@ -146,6 +151,9 @@ function bindEvents() {
 
     // 下载按钮
     elements.downloadBtn.addEventListener('click', downloadContent);
+
+    // 渲染/原始切换按钮
+    elements.renderToggleBtn.addEventListener('click', toggleRenderView);
 
     // 移动端菜单按钮
     if (elements.menuBtn) {
@@ -297,7 +305,6 @@ function render() {
             return `
           <div class="result-item ${isActive ? 'active' : ''}" data-id="${prompt.id}">
             <div class="filename">
-                <i data-lucide="file" class="item-icon"></i>
                 <span class="filename-text">${highlightText(prompt.filename, state.searchQuery)}</span>
             </div>
             <div class="path">${highlightText(prompt.path, state.searchQuery)}</div>
@@ -373,6 +380,59 @@ function showPreview(prompt) {
     elements.previewTitle.textContent = prompt.filename.replace('.md', '');
     elements.previewText.textContent = prompt.content;
     elements.previewDescription.textContent = prompt.description || '暂无描述';
+
+    // 按当前 viewMode 刷新视图
+    applyViewMode();
+}
+
+/**
+ * 切换渲染/原始视图
+ */
+function toggleRenderView() {
+    state.viewMode = state.viewMode === 'raw' ? 'rendered' : 'raw';
+    applyViewMode();
+}
+
+/**
+ * 根据当前 viewMode 更新 UI
+ */
+function applyViewMode() {
+    const isRendered = state.viewMode === 'rendered';
+    const iconEl = elements.renderToggleBtn.querySelector('.icon');
+    const textEl = elements.renderToggleBtn.querySelector('.text');
+
+    if (isRendered) {
+        // 显示渲染视图
+        elements.previewText.style.display = 'none';
+        elements.previewRendered.style.display = 'block';
+        elements.previewRendered.innerHTML = renderMarkdown(
+            state.selectedPrompt ? state.selectedPrompt.content : ''
+        );
+        iconEl.setAttribute('data-lucide', 'eye-off');
+        textEl.textContent = '源码';
+        elements.renderToggleBtn.classList.add('active');
+    } else {
+        // 显示原始文本
+        elements.previewText.style.display = 'block';
+        elements.previewRendered.style.display = 'none';
+        iconEl.setAttribute('data-lucide', 'eye');
+        textEl.textContent = '预览';
+        elements.renderToggleBtn.classList.remove('active');
+    }
+
+    if (window.lucide) window.lucide.createIcons();
+}
+
+/**
+ * 将 Markdown 字符串转换为安全的 HTML
+ */
+function renderMarkdown(content) {
+    if (!content) return '';
+    if (window.marked) {
+        return window.marked.parse(content);
+    }
+    // 降级：将纯文本做基础转义后包裹
+    return `<pre>${content.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</pre>`;
 }
 
 /**

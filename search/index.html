@@ -7,6 +7,7 @@
   <title>提示词搜索 - Awesome Prompts</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 
 <body>
@@ -111,6 +112,10 @@
             </button>
             <h2 id="previewTitle">提示词标题</h2>
             <div class="preview-actions">
+              <button id="renderToggleBtn" class="action-btn render-toggle-btn" title="切换渲染视图">
+                <i data-lucide="eye" class="icon"></i>
+                <span class="text">预览</span>
+              </button>
               <button id="copyBtn" class="action-btn" title="复制内容">
                 <i data-lucide="copy" class="icon"></i>
                 <span class="text">复制</span>
@@ -124,7 +129,10 @@
 
           <!-- 内容预览 -->
           <div class="preview-body">
+            <!-- 原始 Markdown 文本 -->
             <pre id="previewText" class="preview-text"></pre>
+            <!-- 渲染后的 Markdown -->
+            <div id="previewRendered" class="preview-rendered" style="display:none;"></div>
           </div>
 
           <!-- 底部功能描述 -->
