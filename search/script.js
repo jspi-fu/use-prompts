@@ -429,7 +429,7 @@ function applyViewMode() {
 function renderMarkdown(content) {
     if (!content) return '';
     if (window.marked) {
-        return window.marked.parse(content);
+        return window.marked.parse(content, { breaks: true });
     }
     // 降级：将纯文本做基础转义后包裹
     return `<pre>${content.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</pre>`;
